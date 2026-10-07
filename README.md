@@ -77,3 +77,43 @@ git push
 ```
 
 Vercel volverá a desplegar automáticamente.
+
+
+## Exclusive V3
+
+Esta revisión restaura la dirección visual editorial previa al rediseño de Codex.
+
+### Música
+La invitación intenta reproducir primero `assets/music.mp3`. El clic en
+**Abrir invitación** funciona a la vez como apertura y autorización de audio,
+por lo que no existe un segundo paso para “activar” la canción. Si el MP3 no
+está disponible, se utiliza `assets/nuestra_cancion.wav` como respaldo.
+
+
+## Exclusive V4
+
+Esta versión añade:
+- 2 fotografías editoriales generadas para Meel y Silvia:
+  - `assets/editorial-couple-01.webp`
+  - `assets/editorial-couple-02.webp`
+- hero con foto protagonista de sesión profesional.
+- fondos mejorados con más sensación de boda, textura tipo papel, flores decorativas y marcas de agua.
+- conservación de las fotos reales (`meel.png` y `silvia.png`) como recuerdos auténticos.
+
+
+## Exclusive V5
+
+Esta versión reemplaza las 2 imágenes IA anteriores por imágenes proporcionadas por el usuario:
+- `assets/companions-01.png`
+- `assets/companions-02.png`
+
+También incorpora un fondo floral/papel basado en la referencia subida por el usuario:
+- `assets/floral-background-reference.png`
+
+Además, el resto de bloques visuales se armonizó más con ese estilo romántico y floral.
+
+
+V6: refinamiento floral final.
+- Se añadieron 4 fondos florales distintos para diferentes paneles.
+- Hero, historia, countdown, itinerario, regalos, RSVP, QR y footer ahora usan composiciones florales diferentes.
+- Se buscó una sensación más premium, rica y consistente con papelería de boda de lujo.

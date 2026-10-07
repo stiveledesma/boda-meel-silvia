@@ -1,0 +1,38 @@
+MEEL & SILVIA — EXCLUSIVE V4
+================================
+
+Qué trae esta versión:
+- 2 fotos IA editoriales ya integradas en la web:
+  - assets/editorial-couple-01.webp  (hero principal)
+  - assets/editorial-couple-02.webp  (historia / reel)
+- fondo mucho más trabajado: papel, flores, marcas de agua y aire de invitación de boda.
+- se mantienen las fotos reales de Meel y Silvia.
+- la web sigue intentando reproducir primero assets/music.mp3 y usa assets/nuestra_cancion.wav como respaldo.
+
+Cómo usarla sobre tu repositorio local:
+1. Extrae este ZIP.
+2. Copia TODO el contenido de la carpeta `meel_silvia_exclusive_v4` dentro de:
+   C:\Dev\boda-meel-silvia
+3. Acepta “Reemplazar archivos”.
+4. Verifica que siga existiendo:
+   C:\Dev\boda-meel-silvia\assets\music.mp3
+5. Ejecuta:
+   python -m http.server 8080
+6. Abre:
+   http://localhost:8080
+
+Después de revisar visualmente:
+- si te gusta, recién hacemos git add / commit / push
+- si quieres más cambios, seguimos desde esta V4
+
+
+V5 incluye:
+- reemplazo de las 2 imágenes IA por las 2 imágenes nuevas subidas por el usuario.
+- fondo general mucho más floral, tipo papel elegante, inspirado en la última referencia.
+- se mantuvieron las fotos reales de Meel y Silvia y el audio MP3.
+
+
+V6: refinamiento floral final.
+- Se añadieron 4 fondos florales distintos para diferentes paneles.
+- Hero, historia, countdown, itinerario, regalos, RSVP, QR y footer ahora usan composiciones florales diferentes.
+- Se buscó una sensación más premium, rica y consistente con papelería de boda de lujo.

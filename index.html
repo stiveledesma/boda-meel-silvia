@@ -6,17 +6,24 @@
   <meta name="theme-color" content="#f4eee8" />
   <title>Meel & Silvia — Invitación</title>
   <meta name="description" content="Invitación web premium de boda — Meel & Silvia" />
+  <meta property="og:title" content="Meel & Silvia — Nos casamos" />
+  <meta property="og:description" content="Acompáñanos en nuestro gran día." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body class="is-locked">
+<body class="is-locked v4-body">
   <div class="noise" aria-hidden="true"></div>
+  <div class="paper-petals paper-petals-a" aria-hidden="true"></div>
+  <div class="paper-petals paper-petals-b" aria-hidden="true"></div>
+  <div class="paper-monogram paper-monogram-a" aria-hidden="true">M&amp;S</div>
+  <div class="paper-monogram paper-monogram-b" aria-hidden="true">M&amp;S</div>
 
-  <section class="gate" id="gate" aria-label="Abrir invitación">
+  <section class="gate gate-v4" id="gate" aria-label="Abrir invitación">
     <img src="assets/floral.svg" alt="" class="gate-floral top" />
-    <div class="gate-card">
+    <div class="gate-card gate-card-v4">
       <img src="assets/monogram.svg" class="gate-monogram" alt="Monograma de Meel y Silvia" />
       <p class="kicker">Tenemos algo que celebrar</p>
       <h1>Meel <em>&</em> Silvia</h1>
@@ -25,7 +32,7 @@
         <span class="seal-mark">M<span>&</span>S</span>
         <span class="seal-copy">Abrir invitación</span>
       </button>
-      <p class="gate-note">Al abrir podrás reproducir nuestra canción.</p>
+      <p class="gate-note">Al abrir la invitación comenzará nuestra canción.</p>
     </div>
     <img src="assets/floral.svg" alt="" class="gate-floral bottom" />
   </section>
@@ -45,16 +52,19 @@
     </button>
   </header>
 
-  <audio id="weddingSong" loop preload="metadata">
+  <audio id="weddingSong" loop preload="metadata" playsinline>
+    <source src="assets/music.mp3" type="audio/mpeg" />
     <source src="assets/nuestra_cancion.wav" type="audio/wav" />
   </audio>
 
   <main>
-    <section class="hero" id="inicio">
+    <section class="hero hero-v4" id="inicio">
       <div class="hero-wash" aria-hidden="true"></div>
-      <div class="hero-grid">
+      <img src="assets/floral.svg" class="hero-float floral-one" alt="" />
+      <img src="assets/floral.svg" class="hero-float floral-two" alt="" />
+      <div class="hero-grid hero-grid-v4">
         <div class="hero-copy reveal">
-          <p class="kicker">Una historia que se convierte en hogar</p>
+          <p class="kicker">Con nuestras familias y con todo el corazón</p>
           <h2 class="hero-title">Meel <span>&</span> Silvia</h2>
           <p class="hero-subtitle">Nos casamos</p>
           <div class="ornament" aria-hidden="true"><span></span><i>◇</i><span></span></div>
@@ -66,20 +76,24 @@
           <a href="#confirmacion" class="text-link">Confirmar asistencia <span>↘</span></a>
         </div>
 
-        <div class="portrait-stage reveal" aria-label="Retratos de Meel y Silvia">
-          <div class="portrait-frame portrait-meel">
-            <img src="assets/meel.png" alt="Meel" />
-            <span class="portrait-caption">Meel</span>
+        <div class="hero-visual reveal" aria-label="Recuerdos especiales de la pareja y sus gatitos">
+          <div class="hero-photo-card">
+            <div class="hero-photo-mat">
+              <img src="assets/companions-01.png" alt="Foto especial de una gatita carey, parte de la historia de Meel y Silvia" />
+            </div>
+            <p class="hero-photo-caption">Nuestros pequeños amores también forman parte de esta historia.</p>
           </div>
-          <div class="portrait-frame portrait-silvia">
-            <img src="assets/silvia.png" alt="Silvia" />
-            <span class="portrait-caption">Silvia</span>
+          <div class="mini-polaroid mini-meel">
+            <img src="assets/meel.png" alt="Foto real de Meel" />
+            <span>Meel</span>
           </div>
-          <div class="portrait-line" aria-hidden="true"></div>
-          <p class="portrait-note">El comienzo de<br>nuestro para siempre</p>
+          <div class="mini-polaroid mini-silvia">
+            <img src="assets/silvia.png" alt="Foto real de Silvia" />
+            <span>Silvia</span>
+          </div>
+          <div class="hero-watermark-note">El comienzo de nuestro para siempre</div>
         </div>
       </div>
-      <img src="assets/floral.svg" class="hero-floral" alt="" />
     </section>
 
     <section class="countdown-section section-pad reveal" aria-labelledby="countTitle">
@@ -87,7 +101,7 @@
         <p class="kicker">Save the date</p>
         <h3 id="countTitle">Falta muy poco</h3>
       </div>
-      <div class="countdown" aria-live="polite">
+      <div class="countdown countdown-v4" aria-live="polite">
         <div><strong id="days">000</strong><span>Días</span></div>
         <div><strong id="hours">00</strong><span>Horas</span></div>
         <div><strong id="minutes">00</strong><span>Minutos</span></div>
@@ -103,33 +117,50 @@
         <p>No queremos resumir lo nuestro en una cronología perfecta. Preferimos recordar esos pequeños momentos que, sin darnos cuenta, fueron construyendo una vida compartida.</p>
       </div>
 
-      <div class="story-editorial">
-        <figure class="editorial-photo reveal">
-          <div class="photo-mat"><img src="assets/silvia.png" alt="Retrato de Silvia" /></div>
-          <figcaption>Una sonrisa que empezó a sentirse como casa.</figcaption>
-        </figure>
-        <div class="story-chapters reveal">
-          <article><span>01</span><div><small>El comienzo</small><h4>Una conversación inesperada</h4><p>De esas que empiezan sin planes y terminan abriendo un mundo nuevo.</p></div></article>
-          <article><span>02</span><div><small>El camino</small><h4>Elegirnos en lo cotidiano</h4><p>Aprender a reír, sostenernos y celebrar incluso los días más simples.</p></div></article>
-          <article><span>03</span><div><small>Lo que viene</small><h4>Un mismo lugar al que volver</h4><p>Ahora queremos compartir con ustedes el inicio de nuestro siguiente capítulo.</p></div></article>
+      <div class="story-v4-shell reveal">
+        <div class="story-v4-photo">
+          <div class="story-v4-mat">
+            <img src="assets/companions-02.png" alt="Foto especial de un gatito descansando con su pez de juguete" />
+          </div>
+          <figcaption>Pequeños compañeros, grandes ternuras.</figcaption>
         </div>
-        <figure class="editorial-photo second reveal">
-          <div class="photo-mat"><img src="assets/meel.png" alt="Retrato de Meel" /></div>
+        <div class="story-v4-copy">
+          <div class="story-chapters">
+            <article><span>01</span><div><small>El comienzo</small><h4>Una conversación inesperada</h4><p>De esas que empiezan sin planes y terminan abriendo un mundo nuevo.</p></div></article>
+            <article><span>02</span><div><small>El camino</small><h4>Elegirnos en lo cotidiano</h4><p>Aprender a reír, sostenernos y celebrar incluso los días más simples.</p></div></article>
+            <article><span>03</span><div><small>Lo que viene</small><h4>Un mismo lugar al que volver</h4><p>Ahora queremos compartir con ustedes el inicio de nuestro siguiente capítulo.</p></div></article>
+          </div>
+          <blockquote class="love-line">“Y sin darnos cuenta, los pequeños momentos se convirtieron en nuestro para siempre.”</blockquote>
+        </div>
+      </div>
+
+      <div class="real-memories reveal">
+        <div class="memory-card">
+          <div class="photo-mat"><img src="assets/silvia.png" alt="Retrato real de Silvia" /></div>
+          <figcaption>Una sonrisa que empezó a sentirse como casa.</figcaption>
+        </div>
+        <div class="memory-center-copy">
+          <p class="kicker">Recuerdos reales</p>
+          <h4>Lo auténtico también forma parte del arte</h4>
+          <p>Nuestras fotos reales siguen aquí, como pequeños recuerdos que le dan verdad y calidez a la invitación.</p>
+        </div>
+        <div class="memory-card second">
+          <div class="photo-mat"><img src="assets/meel.png" alt="Retrato real de Meel" /></div>
           <figcaption>Pequeños momentos, una historia inmensa.</figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
     <section class="memory-film section-pad reveal" aria-labelledby="memTitle">
       <div class="section-heading centered narrow">
         <p class="kicker">Reel de recuerdos</p>
-        <h3 id="memTitle">Dos miradas, una misma historia</h3>
-        <p>En lugar de ampliar las fotos hasta deformarlas, esta galería conserva su proporción natural y las presenta como una pequeña película editorial.</p>
+        <h3 id="memTitle">Una pequeña película de nuestra historia</h3>
+        <p>Ahora el reel combina recuerdos especiales de nuestros gatitos con nuestras fotos reales, dentro de un estilo más floral y romántico.</p>
       </div>
       <div class="film-strip" id="filmStrip">
-        <figure class="film-card active"><img src="assets/meel.png" alt="Meel" /><figcaption>Meel · un instante sin posar</figcaption></figure>
+        <figure class="film-card active"><img src="assets/companions-02.png" alt="Meel y Silvia al atardecer" /><figcaption>Nuestros gatitos · una parte muy querida de nuestra historia</figcaption></figure>
         <figure class="film-card"><img src="assets/silvia.png" alt="Silvia" /><figcaption>Silvia · una tarde para recordar</figcaption></figure>
-        <figure class="film-card text-card"><div><span>14.02.2027</span><strong>Meel & Silvia</strong><p>Nos vemos en Cusco para celebrar el amor, la amistad y todo lo que viene.</p></div></figure>
+        <figure class="film-card"><img src="assets/meel.png" alt="Meel" /><figcaption>Meel · un recuerdo auténtico</figcaption></figure>
       </div>
       <div class="film-controls" aria-label="Controles de galería">
         <button type="button" data-film="prev" aria-label="Foto anterior">←</button>
@@ -150,7 +181,7 @@
         </svg>
         <article style="--x: 8%; --y: 48%"><span>16:00</span><strong>Ceremonia</strong><small>Parroquia de San Blas</small></article>
         <article style="--x: 33%; --y: 63%"><span>18:00</span><strong>Recepción</strong><small>Jardín del Valle</small></article>
-        <article style="--x: 58%; --y: 41%"><span>20:00</span><strong>Cena & brindis</strong><small>Salón principal</small></article>
+        <article style="--x: 58%; --y: 41%"><span>20:00</span><strong>Cena &amp; brindis</strong><small>Salón principal</small></article>
         <article style="--x: 82%; --y: 60%"><span>22:00</span><strong>Fiesta</strong><small>Hasta que el cuerpo aguante</small></article>
       </div>
     </section>
@@ -259,7 +290,7 @@
   </main>
 
   <footer class="site-footer">
-    <img src="assets/floral.svg" alt="" />
+    <img src="assets/footer-divider.png" alt="" />
     <p>Gracias por ser parte de nuestro para siempre</p>
     <h3>Meel <span>&</span> Silvia</h3>
     <small>14 · 02 · 2027 · Cusco</small>

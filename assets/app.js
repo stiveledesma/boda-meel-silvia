@@ -25,9 +25,11 @@ async function startMusic(){
 }
 
 $('#openInvitation').addEventListener('click', async () => {
+  // The click on “Abrir invitación” is the user gesture used by browsers
+  // to authorize audio. There is no second music activation step.
+  await startMusic();
   gate.classList.add('closed');
   body.classList.remove('is-locked');
-  await startMusic();
   setTimeout(() => gate.remove(), 950);
 });
 
