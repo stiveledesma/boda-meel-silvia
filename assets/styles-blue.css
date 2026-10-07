@@ -336,3 +336,52 @@ p{color:var(--ink-soft)}
   body{background-attachment:scroll}
   .site-footer .footer-divider{width:min(430px,86vw);opacity:.78}
 }
+
+
+/* ==========================================================
+   SELECTOR DE TEMA — CLÁSICO / AZUL
+   ========================================================== */
+.theme-switch{
+  display:inline-flex;
+  align-items:center;
+  gap:3px;
+  padding:4px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.64);
+  backdrop-filter:blur(12px);
+  box-shadow:0 8px 22px rgba(50,50,50,.06);
+}
+.theme-switch button{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--ink-soft);
+  padding:8px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  font-family:var(--sans);
+  font-size:.67rem;
+  font-weight:500;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  transition:background .25s ease,color .25s ease,box-shadow .25s ease;
+}
+.theme-switch button.is-active{
+  background:var(--ink);
+  color:var(--white);
+  box-shadow:0 5px 14px rgba(40,55,70,.13);
+}
+.gate-theme-switch{
+  position:absolute;
+  right:22px;
+  top:20px;
+  z-index:4;
+}
+.nav-actions{display:flex;align-items:center;gap:8px}
+@media(max-width:760px){
+  .theme-switch button{padding:7px 9px;font-size:.58rem;letter-spacing:.08em}
+  .gate-theme-switch{top:12px;right:12px}
+  .nav-actions{gap:5px}
+  .nav-shell .theme-switch button{padding:7px 8px}
+}

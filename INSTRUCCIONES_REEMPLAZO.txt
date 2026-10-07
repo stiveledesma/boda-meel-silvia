@@ -1,38 +1,32 @@
-MEEL & SILVIA — EXCLUSIVE V4
-================================
+MEEL & SILVIA — SELECTOR CLÁSICO / AZUL
+=====================================
 
-Qué trae esta versión:
-- 2 fotos IA editoriales ya integradas en la web:
-  - assets/editorial-couple-01.webp  (hero principal)
-  - assets/editorial-couple-02.webp  (historia / reel)
-- fondo mucho más trabajado: papel, flores, marcas de agua y aire de invitación de boda.
-- se mantienen las fotos reales de Meel y Silvia.
-- la web sigue intentando reproducir primero assets/music.mp3 y usa assets/nuestra_cancion.wav como respaldo.
+Esta versión elimina la necesidad de usar /azul/.
+Todo funciona desde el mismo index.html.
 
-Cómo usarla sobre tu repositorio local:
-1. Extrae este ZIP.
-2. Copia TODO el contenido de la carpeta `meel_silvia_exclusive_v4` dentro de:
+URL clásica:
+https://stiveledesma.github.io/boda-meel-silvia/
+
+URL azul directa:
+https://stiveledesma.github.io/boda-meel-silvia/?tema=azul
+
+También hay un botón arriba para cambiar entre ambos estilos.
+
+PARA INSTALAR SOBRE TU REPO:
+1. Haz un respaldo/commit de tu estado actual (ya lo hiciste).
+2. Extrae este ZIP.
+3. Copia el contenido de `meel_silvia_exclusive_v8_dual` dentro de:
    C:\Dev\boda-meel-silvia
-3. Acepta “Reemplazar archivos”.
-4. Verifica que siga existiendo:
-   C:\Dev\boda-meel-silvia\assets\music.mp3
-5. Ejecuta:
+4. Acepta reemplazar archivos.
+5. NO borres tu `assets\music.mp3`.
+6. Prueba localmente:
    python -m http.server 8080
-6. Abre:
-   http://localhost:8080
+7. Abre:
+   http://localhost:8080/
+   http://localhost:8080/?tema=azul
+8. Si todo está bien:
+   git add .
+   git commit -m "Agregar selector Clasico Azul"
+   git push origin main
 
-Después de revisar visualmente:
-- si te gusta, recién hacemos git add / commit / push
-- si quieres más cambios, seguimos desde esta V4
-
-
-V5 incluye:
-- reemplazo de las 2 imágenes IA por las 2 imágenes nuevas subidas por el usuario.
-- fondo general mucho más floral, tipo papel elegante, inspirado en la última referencia.
-- se mantuvieron las fotos reales de Meel y Silvia y el audio MP3.
-
-
-V6: refinamiento floral final.
-- Se añadieron 4 fondos florales distintos para diferentes paneles.
-- Hero, historia, countdown, itinerario, regalos, RSVP, QR y footer ahora usan composiciones florales diferentes.
-- Se buscó una sensación más premium, rica y consistente con papelería de boda de lujo.
+GitHub Pages actualizará el mismo enlace automáticamente.

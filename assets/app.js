@@ -156,3 +156,40 @@ $('#rsvpForm').addEventListener('submit', e => {
   writeList('ms_rsvp_v2',items);
   showToast('Confirmación guardada en este navegador');
 });
+
+
+// Selector visual: Clásico / Azul — una sola URL, sin subcarpeta /azul/.
+const themeStylesheet = document.getElementById('themeStylesheet');
+const themeButtons = [...document.querySelectorAll('[data-theme-choice]')];
+
+function currentVisualTheme(){
+  return document.documentElement.dataset.visualTheme === 'azul' ? 'azul' : 'clasico';
+}
+
+function syncThemeButtons(theme){
+  themeButtons.forEach(btn => {
+    const active = btn.dataset.themeChoice === theme;
+    btn.classList.toggle('is-active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
+function applyVisualTheme(theme, {persist = true, updateUrl = true} = {}){
+  const safeTheme = theme === 'azul' ? 'azul' : 'clasico';
+  document.documentElement.dataset.visualTheme = safeTheme;
+  themeStylesheet.href = safeTheme === 'azul' ? 'assets/styles-blue.css' : 'assets/styles-classic.css';
+  if(persist) localStorage.setItem('ms_visual_theme', safeTheme);
+  if(updateUrl){
+    const url = new URL(location.href);
+    if(safeTheme === 'azul') url.searchParams.set('tema','azul');
+    else url.searchParams.delete('tema');
+    history.replaceState(null,'',url);
+  }
+  syncThemeButtons(safeTheme);
+}
+
+themeButtons.forEach(btn => btn.addEventListener('click', () => {
+  applyVisualTheme(btn.dataset.themeChoice);
+}));
+
+syncThemeButtons(currentVisualTheme());
