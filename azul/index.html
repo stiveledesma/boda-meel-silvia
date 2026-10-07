@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4eee8" />
+  <title>Meel & Silvia — Invitación</title>
+  <meta name="description" content="Invitación web premium de boda — Meel & Silvia" />
+  <meta property="og:title" content="Meel & Silvia — Nos casamos" />
+  <meta property="og:description" content="Acompáñanos en nuestro gran día." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="is-locked v4-body">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="paper-petals paper-petals-a" aria-hidden="true"></div>
+  <div class="paper-petals paper-petals-b" aria-hidden="true"></div>
+  <div class="paper-monogram paper-monogram-a" aria-hidden="true">M&amp;S</div>
+  <div class="paper-monogram paper-monogram-b" aria-hidden="true">M&amp;S</div>
+
+  <section class="gate gate-v4" id="gate" aria-label="Abrir invitación">
+    <img src="assets/floral.svg" alt="" class="gate-floral top" />
+    <div class="gate-card gate-card-v4">
+      <img src="assets/monogram.svg" class="gate-monogram" alt="Monograma de Meel y Silvia" />
+      <p class="kicker">Tenemos algo que celebrar</p>
+      <h1>Meel <em>&</em> Silvia</h1>
+      <p class="gate-date">14 · 02 · 2027</p>
+      <button class="seal-button" id="openInvitation" type="button">
+        <span class="seal-mark">M<span>&</span>S</span>
+        <span class="seal-copy">Abrir invitación</span>
+      </button>
+      <p class="gate-note">Al abrir la invitación comenzará nuestra canción.</p>
+    </div>
+    <img src="assets/floral.svg" alt="" class="gate-floral bottom" />
+  </section>
+
+  <header class="nav-shell" id="navShell">
+    <a class="nav-brand" href="#inicio">M<span>&</span>S</a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#historia">Historia</a>
+      <a href="#itinerario">Itinerario</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#regalos">Regalos</a>
+      <a href="#confirmacion">RSVP</a>
+    </nav>
+    <button class="audio-control" id="audioControl" type="button" aria-label="Reproducir o pausar música">
+      <span class="audio-dot"></span>
+      <span id="audioLabel">Nuestra canción</span>
+    </button>
+  </header>
+
+  <audio id="weddingSong" loop preload="metadata" playsinline>
+    <source src="assets/music.mp3" type="audio/mpeg" />
+    <source src="assets/nuestra_cancion.wav" type="audio/wav" />
+  </audio>
+
+  <main>
+    <section class="hero hero-v4" id="inicio">
+      <div class="hero-wash" aria-hidden="true"></div>
+      <img src="assets/floral.svg" class="hero-float floral-one" alt="" />
+      <img src="assets/floral.svg" class="hero-float floral-two" alt="" />
+      <div class="hero-grid hero-grid-v4">
+        <div class="hero-copy reveal">
+          <p class="kicker">Con nuestras familias y con todo el corazón</p>
+          <h2 class="hero-title">Meel <span>&</span> Silvia</h2>
+          <p class="hero-subtitle">Nos casamos</p>
+          <div class="ornament" aria-hidden="true"><span></span><i>◇</i><span></span></div>
+          <p class="hero-quote">“Hay personas que llegan y, sin hacer ruido, terminan siendo el lugar al que siempre quieres volver.”</p>
+          <div class="hero-details">
+            <div><small>Fecha</small><strong>14 de febrero de 2027</strong></div>
+            <div><small>Ciudad</small><strong>Cusco, Perú</strong></div>
+          </div>
+          <a href="#confirmacion" class="text-link">Confirmar asistencia <span>↘</span></a>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Recuerdos especiales de la pareja y sus gatitos">
+          <div class="hero-photo-card">
+            <div class="hero-photo-mat">
+              <img src="assets/companions-01.png" alt="Foto especial de una gatita carey, parte de la historia de Meel y Silvia" />
+            </div>
+            <p class="hero-photo-caption">Nuestros pequeños amores también forman parte de esta historia.</p>
+          </div>
+          <div class="mini-polaroid mini-meel">
+            <img src="assets/meel.png" alt="Foto real de Meel" />
+            <span>Meel</span>
+          </div>
+          <div class="mini-polaroid mini-silvia">
+            <img src="assets/silvia.png" alt="Foto real de Silvia" />
+            <span>Silvia</span>
+          </div>
+          <div class="hero-watermark-note">El comienzo de nuestro para siempre</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown-section section-pad reveal" aria-labelledby="countTitle">
+      <div class="section-heading centered">
+        <p class="kicker">Save the date</p>
+        <h3 id="countTitle">Falta muy poco</h3>
+      </div>
+      <div class="countdown countdown-v4" aria-live="polite">
+        <div><strong id="days">000</strong><span>Días</span></div>
+        <div><strong id="hours">00</strong><span>Horas</span></div>
+        <div><strong id="minutes">00</strong><span>Minutos</span></div>
+        <div><strong id="seconds">00</strong><span>Segundos</span></div>
+      </div>
+      <p class="countdown-line">14 · 02 · 2027 — Jardín del Valle, Cusco</p>
+    </section>
+
+    <section class="story section-pad" id="historia">
+      <div class="story-intro reveal">
+        <p class="kicker">Capítulo I</p>
+        <h3>Nuestra historia</h3>
+        <p>No queremos resumir lo nuestro en una cronología perfecta. Preferimos recordar esos pequeños momentos que, sin darnos cuenta, fueron construyendo una vida compartida.</p>
+      </div>
+
+      <div class="story-v4-shell reveal">
+        <div class="story-v4-photo">
+          <div class="story-v4-mat">
+            <img src="assets/companions-02.png" alt="Foto especial de un gatito descansando con su pez de juguete" />
+          </div>
+          <figcaption>Pequeños compañeros, grandes ternuras.</figcaption>
+        </div>
+        <div class="story-v4-copy">
+          <div class="story-chapters">
+            <article><span>01</span><div><small>El comienzo</small><h4>Una conversación inesperada</h4><p>De esas que empiezan sin planes y terminan abriendo un mundo nuevo.</p></div></article>
+            <article><span>02</span><div><small>El camino</small><h4>Elegirnos en lo cotidiano</h4><p>Aprender a reír, sostenernos y celebrar incluso los días más simples.</p></div></article>
+            <article><span>03</span><div><small>Lo que viene</small><h4>Un mismo lugar al que volver</h4><p>Ahora queremos compartir con ustedes el inicio de nuestro siguiente capítulo.</p></div></article>
+          </div>
+          <blockquote class="love-line">“Y sin darnos cuenta, los pequeños momentos se convirtieron en nuestro para siempre.”</blockquote>
+        </div>
+      </div>
+
+      <div class="real-memories reveal">
+        <div class="memory-card">
+          <div class="photo-mat"><img src="assets/silvia.png" alt="Retrato real de Silvia" /></div>
+          <figcaption>Una sonrisa que empezó a sentirse como casa.</figcaption>
+        </div>
+        <div class="memory-center-copy">
+          <p class="kicker">Recuerdos reales</p>
+          <h4>Lo auténtico también forma parte del arte</h4>
+          <p>Nuestras fotos reales siguen aquí, como pequeños recuerdos que le dan verdad y calidez a la invitación.</p>
+        </div>
+        <div class="memory-card second">
+          <div class="photo-mat"><img src="assets/meel.png" alt="Retrato real de Meel" /></div>
+          <figcaption>Pequeños momentos, una historia inmensa.</figcaption>
+        </div>
+      </div>
+    </section>
+
+    <section class="memory-film section-pad reveal" aria-labelledby="memTitle">
+      <div class="section-heading centered narrow">
+        <p class="kicker">Reel de recuerdos</p>
+        <h3 id="memTitle">Una pequeña película de nuestra historia</h3>
+        <p>Ahora el reel combina recuerdos especiales de nuestros gatitos con nuestras fotos reales, dentro de un estilo más floral y romántico.</p>
+      </div>
+      <div class="film-strip" id="filmStrip">
+        <figure class="film-card active"><img src="assets/companions-02.png" alt="Meel y Silvia al atardecer" /><figcaption>Nuestros gatitos · una parte muy querida de nuestra historia</figcaption></figure>
+        <figure class="film-card"><img src="assets/silvia.png" alt="Silvia" /><figcaption>Silvia · una tarde para recordar</figcaption></figure>
+        <figure class="film-card"><img src="assets/meel.png" alt="Meel" /><figcaption>Meel · un recuerdo auténtico</figcaption></figure>
+      </div>
+      <div class="film-controls" aria-label="Controles de galería">
+        <button type="button" data-film="prev" aria-label="Foto anterior">←</button>
+        <div class="film-progress"><span id="filmProgress"></span></div>
+        <button type="button" data-film="next" aria-label="Foto siguiente">→</button>
+      </div>
+    </section>
+
+    <section class="itinerary section-pad" id="itinerario">
+      <div class="section-heading reveal">
+        <p class="kicker">Capítulo II</p>
+        <h3>El gran día</h3>
+        <p>Una secuencia sencilla, elegante y fácil de leer desde el celular.</p>
+      </div>
+      <div class="timeline-art reveal">
+        <svg class="timeline-path" viewBox="0 0 1200 230" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M20 118 C180 20 320 210 470 118 S780 25 930 118 S1100 205 1180 112" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 7" />
+        </svg>
+        <article style="--x: 8%; --y: 48%"><span>16:00</span><strong>Ceremonia</strong><small>Parroquia de San Blas</small></article>
+        <article style="--x: 33%; --y: 63%"><span>18:00</span><strong>Recepción</strong><small>Jardín del Valle</small></article>
+        <article style="--x: 58%; --y: 41%"><span>20:00</span><strong>Cena &amp; brindis</strong><small>Salón principal</small></article>
+        <article style="--x: 82%; --y: 60%"><span>22:00</span><strong>Fiesta</strong><small>Hasta que el cuerpo aguante</small></article>
+      </div>
+    </section>
+
+    <section class="location section-pad" id="ubicacion">
+      <div class="location-card reveal">
+        <div class="location-art">
+          <div class="map-grid"></div>
+          <div class="map-route"></div>
+          <div class="pin"><i></i></div>
+          <span class="map-label">CUSCO</span>
+        </div>
+        <div class="location-copy">
+          <p class="kicker">Ubicación</p>
+          <h3>Jardín del Valle</h3>
+          <p>Camino del Mirador 148, Cusco, Perú.</p>
+          <p class="muted-small">Dirección demostrativa. El botón puede reemplazarse por la ubicación real de la ceremonia o recepción.</p>
+          <a class="button-ink" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=Cusco+Peru">Abrir en Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="guest-pass-section section-pad reveal" id="pase">
+      <div class="guest-pass" id="guestPass">
+        <div class="pass-monogram"><img src="assets/monogram.svg" alt="" /></div>
+        <div class="pass-copy">
+          <p class="kicker">Pase personal</p>
+          <h3 id="guestDisplay">Con mucho cariño, te invitamos</h3>
+          <p id="guestSeats">Este pase está configurado como demostración para 2 personas.</p>
+          <div class="pass-rule"></div>
+          <small>Tip: usa <code>?invitado=Familia%20Ledesma&cupos=4</code> al final de la URL para crear pases personalizados ilimitados.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="gifts section-pad" id="regalos">
+      <div class="letter reveal">
+        <img src="assets/floral.svg" class="letter-floral" alt="" />
+        <p class="kicker">Mesa de regalos</p>
+        <h3>Su presencia ya es un regalo</h3>
+        <p>Pero si desean acompañarnos con un detalle, hemos dejado estas opciones de ejemplo para mostrar cómo se integraría en la invitación final.</p>
+        <div class="gift-lines">
+          <div><span>Yape / Plin</span><strong>999 555 111</strong></div>
+          <div><span>Cuenta BCP</span><strong>191-88997766-0-22</strong></div>
+          <div><span>Lista de regalos</span><strong>Falabella · SinEnvolturas</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interaction section-pad">
+      <div class="interaction-grid">
+        <article class="interaction-card reveal">
+          <p class="kicker">Buzón de deseos</p>
+          <h3>Déjanos unas palabras</h3>
+          <form id="wishForm" class="editorial-form">
+            <label>Tu nombre<input id="wishName" required autocomplete="name" /></label>
+            <label>Tu mensaje<textarea id="wishText" rows="4" required></textarea></label>
+            <button type="submit" class="button-ink">Guardar deseo</button>
+          </form>
+          <div id="wishList" class="saved-notes"></div>
+        </article>
+        <article class="interaction-card dark reveal">
+          <p class="kicker">Playlist de la boda</p>
+          <h3>¿Qué canción no puede faltar?</h3>
+          <form id="songForm" class="editorial-form inverse">
+            <label>Canción<input id="songInput" required placeholder="Artista — canción" /></label>
+            <button type="submit" class="button-light">Sugerir canción</button>
+          </form>
+          <div id="songList" class="saved-notes inverse"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="rsvp section-pad" id="confirmacion">
+      <div class="rsvp-shell reveal">
+        <div class="rsvp-copy">
+          <p class="kicker">Confirmación de asistencia</p>
+          <h3>¿Nos acompañas?</h3>
+          <p>Nos hará muchísima ilusión celebrar contigo. Completa este formulario de demostración.</p>
+          <img src="assets/floral.svg" alt="" />
+        </div>
+        <form id="rsvpForm" class="rsvp-form">
+          <label>Nombre completo<input id="guestName" required autocomplete="name" /></label>
+          <div class="form-two">
+            <label>Asistencia<select id="attendance" required><option value="">Selecciona</option><option value="Sí asistiré">Sí asistiré</option><option value="No podré asistir">No podré asistir</option></select></label>
+            <label>Personas<input id="guestCount" type="number" min="1" max="8" value="1" required /></label>
+          </div>
+          <label>Mensaje para los novios<textarea id="guestMessage" rows="4"></textarea></label>
+          <button type="submit" class="button-ink">Confirmar asistencia</button>
+          <small>Esta demo guarda la respuesta en el navegador. Para producción conviene conectarla a Google Sheets, Supabase u otra base de datos.</small>
+        </form>
+      </div>
+    </section>
+
+    <section class="photos-qr section-pad" id="fotos">
+      <div class="qr-layout reveal">
+        <div>
+          <p class="kicker">Recuerdos compartidos</p>
+          <h3>Queremos ver la boda a través de tus ojos</h3>
+          <p>El QR puede apuntar a un álbum de Google Photos para que todos suban sus fotos después de la celebración.</p>
+          <a class="text-link" href="https://photos.google.com/" target="_blank" rel="noreferrer">Abrir álbum de ejemplo <span>↗</span></a>
+        </div>
+        <div class="qr-frame"><img src="assets/qr_fotos.png" alt="Código QR para álbum de fotos" /><span>Escanéame</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/footer-divider.png" alt="" class="footer-divider" />
+    <p>Gracias por ser parte de nuestro para siempre</p>
+    <h3>Meel <span>&</span> Silvia</h3>
+    <small>14 · 02 · 2027 · Cusco</small>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
