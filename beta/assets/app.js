@@ -286,7 +286,8 @@ function actualizarEnlacesEntrada(){
   if(!invitationToken)return;
   const url=new URL('entrada/',location.href);
   url.searchParams.set('i',invitationToken);
-  if(document.documentElement.dataset.visualTheme==='azul')url.searchParams.set('tema','azul');
+  const temaEntrada = currentVisualTheme();
+  if(temaEntrada !== 'clasico') url.searchParams.set('tema', temaEntrada);
   else url.searchParams.delete('tema');
   ['#externalEntryAfterRsvp','#externalEntryFromQr'].forEach(selector=>{
     const anchor=document.querySelector(selector);
@@ -531,41 +532,51 @@ $('#entryCopy').addEventListener('click', async () => {
 });
 
 /* =========================================================
-   Selector visual Clásico / Azul
+   V12: cinco estilos visuales, sin tocar las funciones de API.
    ========================================================= */
 const themeStylesheet = document.getElementById('themeStylesheet');
 const themeButtons = [...document.querySelectorAll('[data-theme-choice]')];
+const themePickers = [...document.querySelectorAll('[data-theme-picker]')];
+const availableThemes = ['clasico', 'azul', 'salvia', 'noche', 'rosa'];
 
-function currentVisualTheme(){
-  return document.documentElement.dataset.visualTheme === 'azul' ? 'azul' : 'clasico';
+function currentVisualTheme() {
+  const theme = document.documentElement.dataset.visualTheme;
+  return availableThemes.includes(theme) ? theme : 'clasico';
 }
 
-function syncThemeButtons(theme){
+function syncThemeButtons(theme) {
   themeButtons.forEach(btn => {
     const active = btn.dataset.themeChoice === theme;
     btn.classList.toggle('is-active', active);
-    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    btn.setAttribute('aria-pressed', String(active));
   });
+  themePickers.forEach(select => { select.value = theme; });
 }
 
-function applyVisualTheme(theme, {persist = true, updateUrl = true} = {}){
-  const safeTheme = theme === 'azul' ? 'azul' : 'clasico';
-  document.documentElement.dataset.visualTheme = safeTheme;
-  themeStylesheet.href = safeTheme === 'azul' ? 'assets/styles-blue.css' : 'assets/styles-classic.css';
-  if(persist) localStorage.setItem('ms_visual_theme', safeTheme);
-  if(updateUrl){
-    const url = new URL(location.href);
-    if(safeTheme === 'azul') url.searchParams.set('tema','azul');
-    else url.searchParams.delete('tema');
-    history.replaceState(null,'',url);
+function applyVisualTheme(theme, {persist = true, updateUrl = true} = {}) {
+  const selected = availableThemes.includes(theme) ? theme : 'clasico';
+  document.documentElement.dataset.visualTheme = selected;
+  themeStylesheet.href = selected === 'azul'
+    ? 'assets/styles-blue.css'
+    : 'assets/styles-classic.css';
+  if(persist) {
+    try { localStorage.setItem('ms_visual_theme', selected); } catch (_) {}
   }
-  syncThemeButtons(safeTheme);
+  if(updateUrl) {
+    const url = new URL(location.href);
+    if(selected !== 'clasico') url.searchParams.set('tema', selected);
+    else url.searchParams.delete('tema');
+    history.replaceState(null, '', url);
+  }
+  syncThemeButtons(selected);
   actualizarEnlacesEntrada();
 }
 
 themeButtons.forEach(btn => btn.addEventListener('click', () => {
   applyVisualTheme(btn.dataset.themeChoice);
 }));
-
+themePickers.forEach(select => select.addEventListener('change', () => {
+  applyVisualTheme(select.value);
+}));
 syncThemeButtons(currentVisualTheme());
 loadInvitation();

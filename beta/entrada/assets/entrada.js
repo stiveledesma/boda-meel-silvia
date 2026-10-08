@@ -7,13 +7,14 @@
   const params=new URLSearchParams(location.search);
   const token=String(params.get('i')||'').trim();
   const saved=(()=>{try{return localStorage.getItem('ms_visual_theme')}catch(_){return null}})();
-  const theme=params.get('tema')==='azul'?'azul':params.get('tema')==='clasico'?'clasico':saved==='azul'?'azul':'clasico';
+  const allowed=['clasico','azul','salvia','noche','rosa'];
+  const theme=allowed.includes(params.get('tema'))?params.get('tema'):(allowed.includes(saved)?saved:'clasico');
   document.documentElement.dataset.theme=theme;
   const apiUrl=String(window.BODA_API_CONFIG?.apiUrl||'').trim();
   const apiReady=/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(apiUrl);
   const invite=new URL('../',location.href);
   if(token) invite.searchParams.set('i',token);
-  if(theme==='azul')invite.searchParams.set('tema','azul');
+  if(theme!=='clasico')invite.searchParams.set('tema',theme);
   $('returnInvite').href=invite.toString();
   $('returnError').href=invite.toString();
   let pass=null;
@@ -137,16 +138,19 @@
       const W=1080,H=1590;
       canvas.width=W;canvas.height=H;
       const ctx=canvas.getContext('2d');
-      const blue=theme==='azul';
-      const primary=blue?'#2b4661':'#55372d';
-      const muted=blue?'#678198':'#927362';
-      const line=blue?'#bfd4e4':'#dac1ad';
-      const bg=blue?'#eff7fb':'#fff8f2';
+      const colors={
+        azul:['#2b4661','#678198','#bfd4e4','#eff7fb','#e4f0f8','#eaf4fc'],
+        clasico:['#55372d','#927362','#dac1ad','#fff8f2','#f9ecdf','#f7ede4'],
+        salvia:['#354f40','#738d74','#b8c9b6','#f3f8ee','#e8f1e4','#f7faf1'],
+        rosa:['#74465b','#ac7e93','#e5bdce','#fff3f6','#f7e5ec','#fff8fa'],
+        noche:['#d3ad74','#a78e66','#6e5a3a','#101b29','#162334','#233141']
+      };
+      const [primary,muted,line,bg,startTone,endTone]=colors[theme]||colors.clasico;
       ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
       const gradients=ctx.createLinearGradient(0,0,W,H);
-      gradients.addColorStop(0,blue?'#e4f0f8':'#f9ecdf');
-      gradients.addColorStop(.5,'#fffdfc');
-      gradients.addColorStop(1,blue?'#eaf4fc':'#f7ede4');
+      gradients.addColorStop(0,startTone);
+      gradients.addColorStop(.5,theme==='noche'?'#182638':'#fffdfc');
+      gradients.addColorStop(1,endTone);
       ctx.fillStyle=gradients;ctx.fillRect(35,35,W-70,H-70);
       ctx.strokeStyle=line;ctx.lineWidth=3;ctx.strokeRect(57,57,W-114,H-114);
       ctx.lineWidth=1;ctx.strokeRect(73,73,W-146,H-146);

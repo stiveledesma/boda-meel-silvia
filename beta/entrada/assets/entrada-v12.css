@@ -1,0 +1,14 @@
+/* Theme-specific ticket stationery; validation code unchanged. */
+html[data-theme="salvia"]{--ink:#34513e;--soft:#607b68;--bg:#f5f8ee;--border:#b8cbb7;--accent:#71977b;--ornament:url('../../assets/salvia-3.webp')}
+html[data-theme="salvia"] .ticket{background:linear-gradient(155deg,rgba(251,253,249,.95),rgba(242,249,240,.95));border-radius:110px 110px 16px 16px}
+html[data-theme="rosa"]{--ink:#75465b;--soft:#9b7385;--bg:#fff5f7;--border:#e5b9c9;--accent:#c486a0;--ornament:url('../../assets/rosa-3.webp')}
+html[data-theme="rosa"] .ticket{background:linear-gradient(155deg,rgba(255,250,252,.95),rgba(255,239,245,.96));border-radius:110px 110px 16px 16px}
+html[data-theme="noche"]{--ink:#eee2cc;--soft:#d1be9c;--bg:#111b29;--border:#a78954;--accent:#dbb477;--ornament:url('../../assets/noche-art-deco.svg')}
+html[data-theme="noche"] body{background-color:#111b29;background-image:linear-gradient(rgba(10,18,29,.58),rgba(10,18,29,.58)),var(--ornament)}
+html[data-theme="noche"] .ticket{background:linear-gradient(150deg,rgba(20,33,47,.95),rgba(17,28,40,.96));border-radius:2px;box-shadow:0 22px 60px #0009}
+html[data-theme="noche"] .ticket:before{border-color:#977e51}
+html[data-theme="noche"] .pending-state{background:#142131;color:var(--ink)}
+html[data-theme="noche"] .solid-btn{background:#d6ae72;color:#121d2b;border-color:#d6ae72}
+html[data-theme="noche"] .outline-btn{background:#172537;color:#eee2cc;border-color:#a78954}
+html[data-theme="noche"] .qr-wrap{border-color:#ae9269}
+@media print{html[data-theme="noche"] .ticket{background:white!important;color:#1a2430!important}}

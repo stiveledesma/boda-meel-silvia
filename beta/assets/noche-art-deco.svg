@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 950" preserveAspectRatio="xMidYMid slice">
+<defs><radialGradient id="bg" cx="50%" cy="42%" r="85%"><stop stop-color="#28303a"/><stop offset="0.6" stop-color="#171e29"/><stop offset="1" stop-color="#0e1520"/></radialGradient>
+<pattern id="grain" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M0 80L80 0 M-40 80L40 0" stroke="#d6ad72" stroke-width=".3" opacity=".075"/></pattern>
+<g id="fan" stroke="#c4a16c" fill="none"><path d="M0 0 L-275 -205 M0 0L-240 -260 M0 0L-180 -300 M0 0L-110 -330 M0 0L-30 -345 M0 0L50 -335 M0 0L130 -312 M0 0L200 -275 M0 0L256 -220" opacity=".4"/><path d="M-270 -202 Q0 -480 266 -214 M-220 -165 Q0 -400 224 -165 M-178 -128 Q0 -330 180 -130 M-110 -85 Q0 -250 108 -85" opacity=".4"/><path d="M-295 -222Q0 -520 290 -232" stroke-width="3" opacity=".5"/></g>
+<g id="corner"><path d="M0 0H480 M0 0V420" stroke-width="2.5"/><path d="M20 20H450 M20 20V390" stroke-width="1"/><path d="M48 48H400 M48 48V335" stroke-width=".8"/><path d="M48 258L258 48 M48 330L330 48 M150 48Q48 150 48 48" stroke-width=".8" opacity=".45"/><rect x="12" y="12" width="14" height="14" transform="rotate(45 19 19)" fill="#c4a16c" opacity=".4"/></g>
+</defs>
+<rect width="1600" height="950" fill="url(#bg)"/><rect width="1600" height="950" fill="url(#grain)"/>
+<g stroke="#d0ac73" opacity=".65" fill="none"><path d="M65 65H1535V885H65Z" stroke-width="2"/><path d="M78 78H1522V872H78Z" stroke-width=".7"/><path d="M165 120H1435M165 830H1435" stroke-width=".7" opacity=".3"/><path d="M480 65L510 95L540 65 M1060 65L1090 95L1120 65M480 885L510 855L540 885M1060 885L1090 855L1120 885" opacity=".5"/></g>
+<g stroke="#c4a16c"><use href="#corner" x="65" y="65"/><use href="#corner" transform="translate(1535 65) scale(-1 1)"/><use href="#corner" transform="translate(65 885) scale(1 -1)"/><use href="#corner" transform="translate(1535 885) scale(-1 -1)"/></g>
+<g opacity=".36"><use href="#fan" transform="translate(800 5) rotate(180) scale(.8)"/><use href="#fan" transform="translate(800 945) scale(.8)"/></g>
+<g stroke="#c4a16c" opacity=".35" fill="none"><circle cx="800" cy="475" r="280" stroke-width="1"/><circle cx="800" cy="475" r="290" stroke-width=".5"/><path d="M800 180L810 195L800 210L790 195Z M800 740L810 755L800 770L790 755Z M500 475L515 465L530 475L515 485Z M1070 475L1085 465L1100 475L1085 485Z"/></g>
+</svg>

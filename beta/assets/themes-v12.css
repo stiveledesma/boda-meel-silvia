@@ -1,0 +1,204 @@
+/* V12: additional wedding-stationery art directions.
+   Loaded AFTER either approved classic/blue stylesheet; no changes to their CSS. */
+:root[data-visual-theme="salvia"]{
+  --paper:#f3f5eb;--paper-2:#e4ebdf;--paper-3:#fbfcf7;--ink:#31483a;
+  --ink-soft:#617b69;--champagne:#849d83;--rose:#b2c3ab;--rose-2:#e4e9dd;
+  --line:rgba(58,91,66,.16);--line-strong:rgba(58,91,66,.28);
+  --white:#fffdf7;--shadow:0 22px 60px rgba(37,74,49,.11);--shadow-soft:0 12px 35px rgba(37,74,49,.08);
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',Arial,sans-serif;--script:'Parisienne',cursive;
+}
+html[data-visual-theme="salvia"] body{background:linear-gradient(rgba(245,248,239,.80),rgba(246,247,236,.89)),url('salvia-2.webp') center top/cover fixed no-repeat}
+html[data-visual-theme="salvia"] .gate{background:linear-gradient(rgba(245,248,239,.65),rgba(246,247,236,.75)),url('salvia-4.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .gate-card{background:rgba(250,252,246,.82);border:1px solid rgba(76,110,80,.23);box-shadow:0 28px 75px rgba(42,82,54,.12)}
+html[data-visual-theme="salvia"] .gate-monogram{filter:sepia(.65) hue-rotate(53deg) saturate(.46)}
+html[data-visual-theme="salvia"] .gate-floral,html[data-visual-theme="salvia"] .hero-float,html[data-visual-theme="salvia"] .letter-floral,html[data-visual-theme="salvia"] .rsvp-copy img{filter:sepia(.7) hue-rotate(53deg) saturate(.38);opacity:.25}
+html[data-visual-theme="salvia"] .seal-mark{background:radial-gradient(circle at 25% 20%,#b9cfb7,#557561);box-shadow:0 13px 34px rgba(42,82,54,.23)}
+html[data-visual-theme="salvia"] .hero{background:linear-gradient(110deg,rgba(242,248,239,.82),rgba(242,248,239,.63)),url('salvia-1.webp') center top/cover no-repeat}
+html[data-visual-theme="salvia"] .hero::after{background:url('salvia-1.webp') center/cover no-repeat;opacity:.34;mix-blend-mode:multiply}
+html[data-visual-theme="salvia"] .hero::before{border-color:rgba(71,112,75,.32);border-radius:0 120px 0 120px}
+html[data-visual-theme="salvia"] .hero-wash{background:radial-gradient(circle at 80% 30%,rgba(255,255,255,.6),transparent 40%)}
+html[data-visual-theme="salvia"] .hero-title{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-.025em}
+html[data-visual-theme="salvia"] .hero-photo-mat{border-radius:46% 46% 8% 8%;overflow:hidden;border:9px solid #f9fcf6;transform:none;box-shadow:0 22px 70px rgba(42,82,54,.16)}
+html[data-visual-theme="salvia"] .hero-photo-mat img{border-radius:42% 42% 5% 5%;max-height:620px}
+html[data-visual-theme="salvia"] .hero-photo-caption{font-family:'Parisienne',cursive;color:#5b7660}
+html[data-visual-theme="salvia"] .countdown-section::before{background:linear-gradient(rgba(248,250,244,.74),rgba(248,250,244,.88)),url('salvia-4.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .story::before,html[data-visual-theme="salvia"] .itinerary::before,html[data-visual-theme="salvia"] .interaction::before{background:linear-gradient(rgba(248,250,244,.8),rgba(248,250,244,.85)),url('salvia-2.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .rsvp::before,html[data-visual-theme="salvia"] .gifts::before,html[data-visual-theme="salvia"] .photos-qr::before{background:linear-gradient(rgba(248,250,244,.8),rgba(248,250,244,.85)),url('salvia-3.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .memory-film{background:linear-gradient(rgba(248,250,244,.77),rgba(246,249,240,.9)),url('salvia-3.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .memory-film::after{background:url('salvia-3.webp') center/cover no-repeat;opacity:.10}
+html[data-visual-theme="salvia"] .location-card,html[data-visual-theme="salvia"] .guest-pass,html[data-visual-theme="salvia"] .letter,html[data-visual-theme="salvia"] .rsvp-shell{background:linear-gradient(rgba(250,252,247,.90),rgba(250,252,247,.91)),url('salvia-3.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .rsvp-copy{background:linear-gradient(rgba(234,244,232,.8),rgba(241,248,234,.81)),url('salvia-3.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .interaction-card{background:linear-gradient(rgba(250,252,247,.9),rgba(250,252,247,.92)),url('salvia-2.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .interaction-card.dark{background:linear-gradient(rgba(225,237,222,.92),rgba(225,237,222,.9)),url('salvia-4.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .map-grid{filter:sepia(.6) hue-rotate(45deg)}
+html[data-visual-theme="salvia"] .map-label{color:#526d59}
+html[data-visual-theme="salvia"] .site-footer{background:linear-gradient(rgba(248,250,244,.76),rgba(248,250,244,.86)),url('salvia-4.webp') center/cover no-repeat}
+html[data-visual-theme="salvia"] .site-footer .footer-divider{content:url('salvia-divider.svg');width:min(380px,80vw);opacity:.72;filter:none}
+html[data-visual-theme="salvia"] .nav-shell{background:rgba(248,251,245,.89)}
+
+/* Antique rose: generous paper margins, faded floral relief and decorative Cameo marks. */
+:root[data-visual-theme="rosa"]{
+  --paper:#fff4f5;--paper-2:#f5e0e6;--paper-3:#fffafa;--ink:#623a4c;
+  --ink-soft:#936778;--champagne:#bd8198;--rose:#dbacbc;--rose-2:#f9e2e8;
+  --line:rgba(126,63,87,.18);--line-strong:rgba(126,63,87,.28);
+  --white:#fffaf9;--shadow:0 25px 67px rgba(122,53,83,.12);--shadow-soft:0 13px 31px rgba(122,53,83,.09);
+  --serif:'Bodoni Moda','Italiana',Georgia,serif;--sans:'Montserrat',Arial,sans-serif;--script:'Allura',cursive;
+}
+html[data-visual-theme="rosa"] body{background:linear-gradient(rgba(255,247,248,.82),rgba(254,240,243,.89)),url('rosa-2.webp') center top/cover fixed no-repeat}
+html[data-visual-theme="rosa"] .gate{background:linear-gradient(rgba(255,248,249,.58),rgba(255,243,246,.78)),url('rosa-4.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .gate-card{background:rgba(255,251,250,.83);border:1px solid rgba(172,91,120,.32);box-shadow:0 22px 75px rgba(143,61,91,.13);border-radius:46% 46% 10px 10px / 16% 16% 10px 10px;padding:60px 54px 43px}
+html[data-visual-theme="rosa"] .gate h1{font-family:'Bodoni Moda',Georgia,serif;letter-spacing:-.06em;font-size:clamp(3.5rem,8vw,7.2rem)}
+html[data-visual-theme="rosa"] .gate-floral,html[data-visual-theme="rosa"] .hero-float{opacity:.14;filter:sepia(.6) hue-rotate(304deg)}
+html[data-visual-theme="rosa"] .seal-mark{background:radial-gradient(circle at 20% 10%,#f2c8d8,#a96580)}
+html[data-visual-theme="rosa"] .hero{background:linear-gradient(110deg,rgba(254,244,247,.81),rgba(255,246,247,.65)),url('rosa-1.webp') center top/cover no-repeat}
+html[data-visual-theme="rosa"] .hero::after{background:url('rosa-1.webp') center/cover no-repeat;opacity:.34;mix-blend-mode:multiply}
+html[data-visual-theme="rosa"] .hero::before{border:1px solid rgba(183,118,146,.34);border-radius:180px 180px 24px 24px}
+html[data-visual-theme="rosa"] .hero-wash{background:radial-gradient(circle at 80% 30%,rgba(255,255,255,.55),transparent 45%)}
+html[data-visual-theme="rosa"] .hero-title{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(3.2rem,7.3vw,7.2rem);letter-spacing:-.055em}
+html[data-visual-theme="rosa"] .hero-title span{font-family:'Allura',cursive}
+html[data-visual-theme="rosa"] .hero-photo-mat{border:2px solid rgba(190,126,155,.33);box-shadow:0 24px 70px rgba(137,62,89,.15);border-radius:150px 150px 4px 4px;overflow:hidden;transform:none}
+html[data-visual-theme="rosa"] .hero-photo-mat img{border-radius:125px 125px 0 0}
+html[data-visual-theme="rosa"] .hero-photo-caption{font-family:'Allura',cursive;font-size:2rem}
+html[data-visual-theme="rosa"] .countdown-section::before{background:linear-gradient(rgba(255,247,249,.77),rgba(255,247,249,.85)),url('rosa-4.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .story::before,html[data-visual-theme="rosa"] .itinerary::before,html[data-visual-theme="rosa"] .interaction::before{background:linear-gradient(rgba(255,247,249,.8),rgba(255,247,249,.87)),url('rosa-2.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .rsvp::before,html[data-visual-theme="rosa"] .gifts::before,html[data-visual-theme="rosa"] .photos-qr::before{background:linear-gradient(rgba(255,247,249,.79),rgba(255,247,249,.88)),url('rosa-3.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .memory-film{background:linear-gradient(rgba(255,246,248,.8),rgba(253,239,244,.92)),url('rosa-3.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .memory-film::after{background:url('rosa-3.webp') center/cover no-repeat;opacity:.12}
+html[data-visual-theme="rosa"] .location-card,html[data-visual-theme="rosa"] .guest-pass,html[data-visual-theme="rosa"] .letter,html[data-visual-theme="rosa"] .rsvp-shell{background:linear-gradient(rgba(255,250,250,.91),rgba(255,250,250,.93)),url('rosa-3.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .rsvp-copy{background:linear-gradient(rgba(249,225,234,.84),rgba(255,239,244,.88)),url('rosa-3.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .interaction-card{background:linear-gradient(rgba(255,249,250,.93),rgba(255,249,250,.93)),url('rosa-2.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .interaction-card.dark{background:linear-gradient(rgba(249,228,234,.92),rgba(249,228,234,.92)),url('rosa-4.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .site-footer{background:linear-gradient(rgba(255,248,249,.8),rgba(255,248,249,.88)),url('rosa-4.webp') center/cover no-repeat}
+html[data-visual-theme="rosa"] .site-footer .footer-divider{content:url('rosa-divider.svg');width:min(330px,75vw);opacity:.80;filter:none}
+html[data-visual-theme="rosa"] .nav-shell{background:rgba(255,249,250,.91)}
+html[data-visual-theme="rosa"] .letter::before,html[data-visual-theme="rosa"] .rsvp-copy::after{border:1px dashed rgba(179,110,136,.29)}
+
+/* Noche dorada — navy-ink Art Deco / brass engravings, not a recolored flower page. */
+:root[data-visual-theme="noche"]{
+  --paper:#121a25;--paper-2:#192333;--paper-3:#1e2c3d;--ink:#f1e2c5;
+  --ink-soft:#c7b596;--champagne:#d7b576;--rose:#ad946b;--rose-2:#25303b;
+  --line:rgba(215,181,118,.26);--line-strong:rgba(215,181,118,.45);
+  --white:#182331;--shadow:0 22px 65px rgba(0,0,0,.36);--shadow-soft:0 12px 35px rgba(0,0,0,.23);
+  --serif:'Cinzel',Georgia,serif;--sans:'Montserrat',Arial,sans-serif;--script:'Allura',cursive;
+}
+html[data-visual-theme="noche"] body{background:#111a26 url('noche-art-deco.svg') center top/cover fixed no-repeat;color:var(--ink)}
+html[data-visual-theme="noche"] .noise{mix-blend-mode:normal;opacity:.10}
+html[data-visual-theme="noche"] .gate{background:linear-gradient(90deg,rgba(12,18,27,.83),rgba(12,18,27,.68),rgba(12,18,27,.83)),url('noche-art-deco.svg') center/cover no-repeat}
+html[data-visual-theme="noche"] .gate-card{background:rgba(20,30,43,.93);border:1px solid rgba(214,175,105,.51);box-shadow:0 35px 80px rgba(0,0,0,.38);backdrop-filter:blur(12px)}
+html[data-visual-theme="noche"] .gate-monogram,html[data-visual-theme="noche"] .pass-monogram img,html[data-visual-theme="noche"] .entry-monogram{filter:sepia(1) saturate(.5) brightness(1.36)}
+html[data-visual-theme="noche"] .gate-floral,html[data-visual-theme="noche"] .hero-float,html[data-visual-theme="noche"] .letter-floral,html[data-visual-theme="noche"] .rsvp-copy img{display:none}
+html[data-visual-theme="noche"] .gate h1{font-family:'Cinzel',Georgia,serif;font-size:clamp(3.5rem,8vw,7.3rem);letter-spacing:.015em}
+html[data-visual-theme="noche"] .gate .kicker,html[data-visual-theme="noche"] .gate-date{color:#dfccaa}
+html[data-visual-theme="noche"] .seal-mark{background:radial-gradient(circle at 30% 25%,#f1d6a8,#89672e);color:#14202a;box-shadow:0 10px 28px rgba(0,0,0,.5)}
+html[data-visual-theme="noche"] .hero{background:linear-gradient(110deg,rgba(13,21,32,.92),rgba(14,21,31,.63),rgba(13,21,32,.92)),url('noche-art-deco.svg') center/cover no-repeat}
+html[data-visual-theme="noche"] .hero::before{inset:30px;border:1px solid rgba(206,159,79,.54);box-shadow:inset 0 0 0 8px rgba(218,179,104,.035);border-radius:0}
+html[data-visual-theme="noche"] .hero::after{background:none}
+html[data-visual-theme="noche"] .hero-wash{background:radial-gradient(circle at 80% 30%,rgba(223,180,100,.09),transparent 40%)}
+html[data-visual-theme="noche"] .hero-title{font-family:'Cinzel',Georgia,serif;font-size:clamp(3.3rem,6.3vw,6.8rem);line-height:1.12;letter-spacing:.008em;color:#f5e5cb}
+html[data-visual-theme="noche"] .hero-title span{font-family:'Allura',cursive;color:#d4ae70}
+html[data-visual-theme="noche"] .hero-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.55rem;color:#d7c5aa}
+html[data-visual-theme="noche"] .hero-details div{border-color:rgba(215,181,118,.33)}
+html[data-visual-theme="noche"] .hero-photo-mat{background:#1f2b38;border:2px solid #c8a56d;padding:12px;box-shadow:0 24px 80px rgba(0,0,0,.5);transform:rotate(0deg)}
+html[data-visual-theme="noche"] .hero-photo-mat img{filter:sepia(.17) saturate(.8) contrast(1.08)}
+html[data-visual-theme="noche"] .mini-polaroid{background:#1e2834;border-color:rgba(215,181,118,.4)}
+html[data-visual-theme="noche"] .mini-polaroid span{color:#f4dfbd}
+html[data-visual-theme="noche"] .hero-watermark-note{color:#cfae78}
+html[data-visual-theme="noche"] .nav-shell{background:rgba(19,29,42,.94);border-color:rgba(215,181,118,.34);box-shadow:0 12px 38px rgba(0,0,0,.25)}
+html[data-visual-theme="noche"] .theme-switch{background:rgba(9,17,25,.95);border:1px solid rgba(215,181,118,.2)}
+html[data-visual-theme="noche"] .theme-switch button.is-active{background:#be9b61;color:#111a26}
+html[data-visual-theme="noche"] .audio-control{background:#bf9a60;color:#132131}
+html[data-visual-theme="noche"] .countdown-section::before,html[data-visual-theme="noche"] .story::before,html[data-visual-theme="noche"] .itinerary::before,html[data-visual-theme="noche"] .guest-pass-section::before,html[data-visual-theme="noche"] .gifts::before,html[data-visual-theme="noche"] .interaction::before,html[data-visual-theme="noche"] .rsvp::before,html[data-visual-theme="noche"] .photos-qr::before{background:linear-gradient(rgba(14,22,33,.85),rgba(17,27,40,.9)),url('noche-art-deco.svg') center/cover no-repeat;border:1px solid rgba(215,181,118,.32)}
+html[data-visual-theme="noche"] .countdown{background:rgba(18,31,43,.85);border-color:rgba(215,181,118,.33)}
+html[data-visual-theme="noche"] .story-chapters{border-color:var(--line)}
+html[data-visual-theme="noche"] .story-v4-mat,html[data-visual-theme="noche"] .photo-mat,html[data-visual-theme="noche"] .film-card,html[data-visual-theme="noche"] .qr-frame{background:#1f2b37;border:1px solid #a68a61;color:#e8d2ae}
+html[data-visual-theme="noche"] .memory-film{background:linear-gradient(rgba(12,20,30,.87),rgba(14,23,34,.92)),url('noche-art-deco.svg') center/cover no-repeat;color:var(--ink)}
+html[data-visual-theme="noche"] .memory-film::after{background:none}
+html[data-visual-theme="noche"] .memory-film h3,html[data-visual-theme="noche"] .memory-film p,html[data-visual-theme="noche"] .memory-film .kicker{color:var(--ink)}
+html[data-visual-theme="noche"] .film-card figcaption{color:#ead3aa}
+html[data-visual-theme="noche"] .timeline-art article{background:#1d2c3b;border:1px solid rgba(215,181,118,.4);box-shadow:var(--shadow)}
+html[data-visual-theme="noche"] .timeline-art span,html[data-visual-theme="noche"] .timeline-art strong,html[data-visual-theme="noche"] .timeline-art small{color:#e8d7ba}
+html[data-visual-theme="noche"] .location-card,html[data-visual-theme="noche"] .guest-pass,html[data-visual-theme="noche"] .letter,html[data-visual-theme="noche"] .rsvp-shell{background:linear-gradient(rgba(21,32,46,.93),rgba(21,32,46,.95)),url('noche-art-deco.svg') center/cover no-repeat;border:1px solid rgba(215,181,118,.33)}
+html[data-visual-theme="noche"] .location-copy,html[data-visual-theme="noche"] .rsvp-copy{background:rgba(23,37,50,.93)}
+html[data-visual-theme="noche"] .location-art{background:#172334;filter:saturate(.6)}
+html[data-visual-theme="noche"] .map-label{color:#e4c68d}
+html[data-visual-theme="noche"] .interaction-card,html[data-visual-theme="noche"] .interaction-card.dark{background:linear-gradient(rgba(23,34,48,.94),rgba(23,34,48,.95)),url('noche-art-deco.svg') center/cover no-repeat;border:1px solid rgba(215,181,118,.33);color:var(--ink)}
+html[data-visual-theme="noche"] .interaction-card h3,html[data-visual-theme="noche"] .interaction-card.dark h3,html[data-visual-theme="noche"] .interaction-card .kicker,html[data-visual-theme="noche"] .interaction-card.dark .kicker,html[data-visual-theme="noche"] .interaction-card p,html[data-visual-theme="noche"] .interaction-card.dark p{color:var(--ink)}
+html[data-visual-theme="noche"] .editorial-form label,html[data-visual-theme="noche"] .editorial-form.inverse label,html[data-visual-theme="noche"] .rsvp-form label{color:#e0cbab}
+html[data-visual-theme="noche"] .editorial-form input,html[data-visual-theme="noche"] .editorial-form textarea,html[data-visual-theme="noche"] .editorial-form.inverse input,html[data-visual-theme="noche"] .rsvp-form input,html[data-visual-theme="noche"] .rsvp-form textarea,html[data-visual-theme="noche"] .rsvp-form select{color:#f4e5ca;border-color:rgba(215,181,118,.35);background:rgba(12,22,33,.18)}
+html[data-visual-theme="noche"] input::placeholder{color:#b7a481}
+html[data-visual-theme="noche"] .button-soft,html[data-visual-theme="noche"] .button-ink,html[data-visual-theme="noche"] .button-light{border-color:#bb9c69;color:#f6e6c6;background:rgba(20,32,45,.32)}
+html[data-visual-theme="noche"] .button-ink:hover,html[data-visual-theme="noche"] .button-light:hover{background:#c6a36b;color:#14202c}
+html[data-visual-theme="noche"] .api-status{color:#d6bd91}
+html[data-visual-theme="noche"] .rsvp-personal-card{border-color:rgba(215,181,118,.3);background:rgba(16,26,36,.83)}
+html[data-visual-theme="noche"] .entry-sheet{background:#192636;color:#f7e5c7;border:1px solid rgba(215,181,118,.32)}
+html[data-visual-theme="noche"] .site-footer{background:linear-gradient(rgba(14,22,33,.88),rgba(14,22,33,.9)),url('noche-art-deco.svg') center/cover no-repeat}
+html[data-visual-theme="noche"] .site-footer .footer-divider{content:url('noche-art-deco.svg');height:55px;width:min(360px,82vw);object-fit:cover;object-position:50% 0;opacity:.58;filter:none}
+html[data-visual-theme="noche"] .gate .gate-note,html[data-visual-theme="noche"] .location-copy .muted-small{color:#cab99e}
+
+
+/* V12 - Botones de los cinco temas; selector cómodo en móviles. */
+.theme-switch-all {
+  flex-shrink:0;
+  white-space:nowrap;
+  gap:2px;
+  padding:3px;
+}
+.theme-switch-all button {
+  white-space:nowrap;
+  padding:8px 9px;
+  letter-spacing:.025em;
+  font-size:.60rem;
+}
+.theme-switch-all button:focus-visible,
+.theme-picker:focus-visible {outline:2px solid var(--champagne);outline-offset:2px}
+.theme-picker {
+  display:none;
+  appearance:auto;
+  cursor:pointer;
+  padding:9px 7px;
+  border:1px solid var(--line-strong);
+  border-radius:999px;
+  background:rgba(255,255,255,.85);
+  color:var(--ink);
+  font:500 .7rem var(--sans);
+  min-width:145px;
+  max-width:165px;
+}
+.theme-picker option {color:#253342;background:white}
+.gate-theme-panel {position:absolute;right:22px;top:20px;z-index:6;display:flex;gap:8px;align-items:center}
+.gate-theme-panel .gate-theme-switch {position:static}
+.nav-actions {display:flex;align-items:center;gap:7px}
+html[data-visual-theme="noche"] .theme-picker {background:#182637;color:#f2debd;border-color:#ad9162}
+html[data-visual-theme="noche"] .theme-picker option {background:#182637;color:#f2debd}
+@media(max-width:1180px) {
+  .nav-shell {gap:9px}
+  .nav-links {gap:12px}
+  .theme-switch-all button{padding:7px 7px;font-size:.57rem}
+}
+@media(max-width:1000px) {
+  .nav-shell .nav-links {display:none}
+}
+@media(max-width:710px) {
+  .theme-switch-all {display:none !important}
+  .theme-picker {display:block}
+  .gate-theme-panel {right:14px;left:14px;justify-content:center}
+  .gate-card {padding-top:90px}
+}
+@media(max-width:430px) {
+  .nav-shell {width:calc(100% - 12px);padding:7px 10px}
+  .nav-shell .audio-control {padding:8px 10px}
+  .nav-shell .nav-brand {font-size:1.16rem}
+  .nav-actions {gap:4px}
+  .theme-picker {min-width:116px;max-width:136px;font-size:.65rem;padding:8px 4px}
+  .gate-theme-panel {top:12px}
+  .gate-card {padding-top:90px}
+}
+html {overflow-x:hidden;}
+/* Corrige el adorno manuscrito superpuesto en las nuevas paletas. */
+html[data-visual-theme="salvia"] .hero-watermark-note,
+html[data-visual-theme="rosa"] .hero-watermark-note,
+html[data-visual-theme="noche"] .hero-watermark-note {display:none}
+@media(prefers-reduced-motion:reduce) {
+  .reveal {opacity:1;transform:none;transition:none}
+  .seal-mark,.audio-dot {animation:none;transition:none}
+}
