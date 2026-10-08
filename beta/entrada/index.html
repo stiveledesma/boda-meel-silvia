@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f1eb">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Mi entrada · Meel & Silvia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/entrada.css">
+  <script src="../assets/api-config.js" defer></script>
+  <script src="../assets/qr-entry.js" defer></script>
+  <script src="assets/entrada.js" defer></script>
+</head>
+<body>
+  <main class="pass-shell">
+    <header class="pass-top">
+      <span class="brand">M <i>&</i> S</span>
+      <span>14 de febrero de 2027 · Cusco</span>
+    </header>
+
+    <div id="loadingState" class="pending-state" role="status">Preparando tu pase personal…</div>
+    <div id="errorState" class="pending-state" hidden>
+      <h2>El pase todavía no está disponible</h2>
+      <p id="errorText">Confirma tu asistencia para habilitar tu entrada.</p>
+      <a class="outline-btn" id="returnError" href="../">Volver a mi invitación</a>
+    </div>
+
+    <article class="ticket" id="ticket" hidden>
+      <div class="ticket-watermark" aria-hidden="true">M&amp;S</div>
+      <div class="ticket-ornament" aria-hidden="true">✧</div>
+      <p class="eyebrow">Tu entrada de boda</p>
+      <h1>Meel <span>&</span> Silvia</h1>
+      <p class="date">14 · 02 · 2027</p>
+      <div class="ticket-rule"></div>
+      <p class="eyebrow">Pase personal para</p>
+      <h2 id="ticketName">—</h2>
+      <p id="ticketSeats" class="guest-data"></p>
+      <p id="ticketTable" class="guest-table" hidden></p>
+      <div class="qr-wrap" id="qrImage" role="img" aria-label="Código QR para ingresar a la boda"></div>
+      <p class="qr-help">Presenta este código al llegar a recepción</p>
+      <p class="entry-code" id="ticketCode"></p>
+      <p class="fine-print">Este pase corresponde a una invitación y puede usarse para ingresos parciales hasta completar los lugares reservados. Conservarlo no implica un ingreso registrado.</p>
+    </article>
+    <div id="actions" class="actions" hidden>
+      <button id="downloadTicket" class="solid-btn" type="button">Descargar entrada (PNG)</button>
+      <button id="printTicket" class="outline-btn" type="button">Imprimir / Guardar PDF</button>
+      <a class="text-btn" id="returnInvite" href="../">Volver a la invitación</a>
+      <p id="actionStatus" class="status" role="status" aria-live="polite"></p>
+    </div>
+    <footer>No compartas este pase con desconocidos. El personal verificará tu grupo y las plazas disponibles.</footer>
+  </main>
+</body>
+</html>

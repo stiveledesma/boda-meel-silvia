@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#20364d">
+  <title>Recepción · Meel &amp; Silvia</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="stylesheet" href="assets/recepcion.css">
+  <script src="../assets/api-config.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js" defer></script>
+  <script src="assets/recepcion.js" defer></script>
+</head>
+<body>
+  <main class="layout">
+    <header class="header">
+      <div class="mark">M<span>&amp;</span>S</div>
+      <div>
+        <p class="eyebrow">Control de ingreso · V11.2</p>
+        <h1>Recepción de invitados</h1>
+        <p class="intro">Meel &amp; Silvia · 14 de febrero de 2027</p>
+      </div>
+    </header>
+
+    <section class="notice" id="setupMessage" hidden aria-live="polite"></section>
+    <section class="panel" id="loginSection">
+      <div class="section-header">
+        <div><p class="eyebrow">Acceso del personal</p><h2>Iniciar turno</h2></div>
+        <span class="icon" aria-hidden="true">⌁</span>
+      </div>
+      <form id="loginForm" autocomplete="off">
+        <label for="password">Clave privada de recepción</label>
+        <input id="password" type="password" placeholder="Tu clave de recepción" autocomplete="off" required minlength="16">
+        <p class="hint">Se introduce una vez. El navegador guarda solamente una sesión temporal, nunca la contraseña.</p>
+        <button type="submit" id="loginButton" class="btn btn-primary full">Iniciar turno</button>
+      </form>
+      <p id="loginMessage" class="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <div id="privateArea" hidden>
+      <div class="session-bar" id="sessionBar">
+        <span><span class="on-dot"></span> Turno activo · <strong id="remainingSession">6 h disponibles</strong></span>
+        <button type="button" id="logoutButton" class="small-link">Cerrar turno</button>
+      </div>
+
+      <nav class="reception-nav" aria-label="Secciones de recepción">
+        <button class="reception-tab is-selected" type="button" data-main-tab="scan" aria-selected="true"> <span aria-hidden="true">▣</span> Escanear QR</button>
+        <button class="reception-tab" type="button" data-main-tab="dashboard" aria-selected="false"><span aria-hidden="true">▤</span> Lista y control general</button>
+      </nav>
+      <div id="scanArea">
+      <div class="recent-admission" id="recentAdmission" hidden role="status" aria-live="polite"></div>
+      <section class="panel" id="scannerSection">
+        <div class="section-header">
+          <div><p class="eyebrow">Escaneo</p><h2>Escanear QR del invitado</h2></div>
+          <span class="pill" id="scannerStatus">Cámara detenida</span>
+        </div>
+        <div class="viewfinder" id="viewfinder" hidden>
+          <video id="cameraVideo" autoplay playsinline muted aria-label="Cámara para escanear QR"></video>
+          <div class="finder-corners" aria-hidden="true"></div>
+          <span id="cameraHint">Apunta al QR del invitado</span>
+        </div>
+        <div class="button-row">
+          <button type="button" class="btn btn-primary" id="startCamera">Activar cámara</button>
+          <button type="button" class="btn btn-quiet" id="stopCamera" hidden>Detener cámara</button>
+          <button type="button" class="btn btn-quiet" id="nextButton" hidden>Escanear siguiente</button>
+        </div>
+        <p id="cameraMessage" class="message" role="status" aria-live="polite"></p>
+        <details class="manual">
+          <summary>Usar código manual o foto del QR</summary>
+          <form id="manualForm">
+            <label for="manualCode">Código de entrada</label>
+            <input id="manualCode" type="text" placeholder="ENTRY_..." autocapitalize="off" spellcheck="false" autocomplete="off">
+            <button type="submit" id="manualButton" class="btn btn-quiet full">Consultar pase</button>
+          </form>
+          <label for="imageFile" class="file-action">Leer QR desde una foto</label>
+          <input id="imageFile" type="file" accept="image/*" capture="environment">
+        </details>
+      </section>
+
+      <section class="panel guest-panel" id="guestPanel" hidden>
+        <p class="eyebrow">Pase identificado</p>
+        <span class="status-pill" id="guestStatus">Válido</span>
+        <h2 id="guestName">—</h2>
+        <div class="data-row"><span>Mesa</span><strong id="guestMesa">—</strong></div>
+        <div class="stats">
+          <div><strong id="guestReserved">—</strong><small>Reservados</small></div>
+          <div><strong id="guestEntered">—</strong><small>Ingresaron</small></div>
+          <div><strong id="guestAvailable">—</strong><small>Disponibles</small></div>
+        </div>
+        <div id="admitArea">
+          <label for="quantity">¿Cuántas personas están entrando ahora?</label>
+          <select id="quantity"></select>
+          <button type="button" class="btn btn-primary full" id="admitButton">Registrar ingreso</button>
+        </div>
+        <p id="admitMessage" role="status" class="message" aria-live="polite"></p>
+      </section>
+      </div>
+
+      <section class="panel dashboard-panel" id="dashboardPanel" hidden>
+        <div class="dashboard-head">
+          <div>
+            <p class="eyebrow">Control en tiempo real</p>
+            <h2>Lista de invitados</h2>
+          </div>
+          <button type="button" class="btn btn-quiet" id="refreshDashboard">Actualizar lista</button>
+        </div>
+        <p class="hint">Solo las invitaciones confirmadas suman en las cifras de ingreso. Los grupos parcialmente ingresados aparecen en «Por llegar» y «Ingresaron».</p>
+        <div class="dashboard-metrics">
+          <div><strong id="metricReserved">—</strong><small>Lugares confirmados</small></div>
+          <div><strong id="metricEntered">—</strong><small>Personas ingresadas</small></div>
+          <div><strong id="metricRemaining">—</strong><small>Personas por llegar</small></div>
+        </div>
+        <div class="roster-nav" role="tablist" aria-label="Filtrar listado de invitados">
+          <button type="button" class="roster-tab is-selected" role="tab" aria-selected="true" data-roster-tab="porLlegar">Por llegar <span id="countPending">0</span></button>
+          <button type="button" class="roster-tab" role="tab" aria-selected="false" data-roster-tab="ingresaron">Ingresaron <span id="countEntered">0</span></button>
+          <button type="button" class="roster-tab" role="tab" aria-selected="false" data-roster-tab="sinConfirmar">Sin confirmar <span id="countUnconfirmed">0</span></button>
+          <button type="button" class="roster-tab" role="tab" aria-selected="false" data-roster-tab="noAsistiran">No asistirán <span id="countDeclined">0</span></button>
+        </div>
+        <label for="rosterFilter">Buscar por nombre</label>
+        <input type="search" id="rosterFilter" placeholder="Nombre o familia" autocomplete="off" />
+        <p id="dashboardMessage" role="status" aria-live="polite" class="message">Pulsa «Actualizar lista» para consultar el estado.</p>
+        <p class="dashboard-timestamp" id="dashboardTimestamp"></p>
+        <div class="roster-list" id="rosterList" role="tabpanel"></div>
+      </section>
+
+      <p class="safety-note">El QR controla los cupos, no verifica la identidad del portador. Compara el nombre y las personas presentes. Es necesaria una conexión a Internet.</p>
+    </div>
+    <footer>Panel privado de operación · No lo compartas con invitados.</footer>
+    <dialog class="success-dialog" id="successDialog" aria-labelledby="successTitle">
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <p class="eyebrow">Ingreso registrado</p>
+      <h2 id="successTitle">Ingreso exitoso</h2>
+      <strong id="successCount"></strong>
+      <p id="successGuest"></p>
+      <p id="successRemaining"></p>
+      <button type="button" id="dismissSuccess" class="btn btn-primary full">Continuar escaneando</button>
+    </dialog>
+  </main>
+</body>
+</html>
